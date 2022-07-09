@@ -3,6 +3,7 @@ package server
 import (
 	"log"
 
+	"github.com/bruno-fioreze/book_api/server/router"
 	"github.com/gin-gonic/gin"
 )
 
@@ -11,7 +12,7 @@ type Server struct {
 	server *gin.Engine
 }
 
-func NewServer() {
+func NewServer() Server {
 	return Server{
 		port:   "5000",
 		server: gin.Default(),
@@ -19,7 +20,7 @@ func NewServer() {
 }
 
 func (s *Server) Run() {
-	router := router.ConfigRoutes(s.Server)
+	router := router.ConfigRoutes(s.server)
 
 	log.Print("server is running at port: ", s.port)
 	log.Fatal(

@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/Bruno-Fioreze/book_api/controller"
+	"github.com/bruno-fioreze/book_api/controller"
 	"github.com/gin-gonic/gin"
 )
 
