@@ -15,5 +15,5 @@ API Dockerizada feita em GO.
     #veja os logs
     sudo docker-compose logs 
 
-    #tente acessar a aplicação pelo seguinte endereço: localhost:5000
+    #tente acessar a aplicação pelo endereço: http://localhost:5000/
 ```
