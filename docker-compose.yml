@@ -1,0 +1,9 @@
+version: "3.7"  # optional since v1.27.0
+services:
+  web:
+    container_name: books-api
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
