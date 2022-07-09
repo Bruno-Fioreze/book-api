@@ -11,16 +11,16 @@ ENV APP_PATH $GOPATH/src/$APP_NAME/
 COPY . $GOPATH/src/$APP_NAME
 WORKDIR $GOPATH/src/$APP_NAME
  
-# # Budild application
-# RUN CGO_ENABLED=0 go build -v -o /$APP_NAME $GOPATH/src/$APP_NAME/$CMD_PATH
+# Budild application
+RUN CGO_ENABLED=0 go build -v -o /$APP_NAME $GOPATH/src/$APP_NAME/$CMD_PATH
  
-# # Run Stage
-# FROM alpine:3.14
+# Run Stage
+FROM alpine:3.14
  
-# # Copy only required data into this image
-# COPY --from=build-env /$APP_NAME .
+# Copy only required data into this image
+COPY --from=build-env /$APP_NAME .
  
-# # Expose application port
-# EXPOSE 5000
+# Expose application port
+EXPOSE 5000
 RUN chmod +x $GOPATH/src/$APP_NAME/entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
