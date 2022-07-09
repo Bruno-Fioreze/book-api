@@ -5,7 +5,7 @@ FROM golang:1.17-alpine as build-env
 # Set environment variable
 ENV APP_NAME books
 ENV CMD_PATH main.go
-ENV APP_PATH $GOPATH/src/$APP_NAME/
+ENV ENTRYPOINT_PATH $GOPATH/src/$APP_NAME/entrypoint.sh
 
 # Copy application data into image
 COPY . $GOPATH/src/$APP_NAME
@@ -22,5 +22,5 @@ COPY --from=build-env /$APP_NAME .
  
 # Expose application port
 EXPOSE 5000
-RUN chmod +x $GOPATH/src/$APP_NAME/entrypoint.sh
+RUN chmod +x ENTRYPOINT_PATH
 ENTRYPOINT ["./entrypoint.sh"]
