@@ -1,8 +1,7 @@
-### Book API
-
-Resolvi aprender a linguagem Go e para isso estou fazendo uma API
+### Descrição da aplicação
+API Dockerizada feita em GO.
 
 ### Dependências
 
-- go
-- gin
+- Docker
+- Docker Compose
